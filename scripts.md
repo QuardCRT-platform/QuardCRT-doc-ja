@@ -69,6 +69,20 @@ quardCRT は対話的な端末操作を記録し、たたき台となる Python 
 
 この一覧を消したい場合は `Clean all recent script` を使います。
 
+## このリポジトリに含まれるサンプルスクリプト
+
+このリポジトリには、実行して改造できる小さなサンプルスクリプトが `test/scriptengine/` 配下に含まれています。
+
+最初の参考として有用なのは次のスクリプトです。
+
+- `test/scriptengine/session/prompted_ssh2.py`: ホスト、ポート、ユーザー名、パスワードの入力を促し、SSH2 で接続します
+- `test/scriptengine/session/prompted_telnet_login.py`: Telnet で接続し、login、password、shell の各プロンプトを待ちながらログインシーケンスを完了します
+- `test/scriptengine/screen/send_command_and_capture.py`: アクティブなセッションにコマンドを送り、プロンプトに一致するまで出力を読み取ります
+- `test/scriptengine/screen/save_screen_to_file.py`: 現在表示されている画面テキストをローカルファイルに保存します
+- `test/scriptengine/misc/repeat_command_logger.py`: 同じコマンドを複数回実行し、各回の出力をログファイルへ保存します
+- `test/scriptengine/tab/send_to_all_sessions.py`: アクティブなタブグループ内のすべてのセッションへ同じコマンドを送信します
+- `test/scriptengine/filetransfer/zmodem_upload_dialog.py`: ローカルファイルを選択して Zmodem アップロードを開始します
+
 ## 最初の例
 
 以下は、メッセージボックスに quardCRT のバージョンを表示する最小構成のスクリプトです。
