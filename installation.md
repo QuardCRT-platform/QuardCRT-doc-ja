@@ -2,98 +2,155 @@
 
 # インストール
 
-QuardCRTはクロスプラットフォームのターミナルエミュレータで、Windows、MacOS、Linuxをサポートしています。可能であれば、まずはネイティブプラットフォームの公式アプリケーションマーケットを通じてQuardCRTをインストールすることをお勧めします。
+quardCRT は Windows、macOS、Linux 向けのパッケージを提供しています。公式アプリストアに登録されているプラットフォームでは、そこからのインストールが最も簡単です。アプリストアが利用できない場合は、GitHub、Gitee、SourceForge からリリースパッケージを取得してください。
+
+## ダウンロード前の目安
+
+- quardCRT をそのまま使いたいだけなら、OS と CPU アーキテクチャに合ったパッケージを選びます。
+- Windows でネイティブプラグインをビルドまたは利用する予定がある場合は、一般的な MSVC ツールチェーンとランタイムを合わせやすい `MSVC` 版を推奨します。
+- Apple Silicon を使っている場合は、macOS の `arm64` パッケージを選びます。
+- Linux では、単一ファイルで持ち運びやすい `AppImage` と、Debian 系ディストリビューション向けの `deb` パッケージを選べます。
 
 ## アプリストア
 
-QuardCRTは現在、以下のアプリストアで利用可能です。
+quardCRT は現在、以下のアプリストアで利用できます。
 
 - [![Microsoft Store](https://get.microsoft.com/images/ja%20dark.svg)](https://apps.microsoft.com/detail/quardCRT/9p6102k9qb3t?mode=direct)
 - [Spark Store](https://www.spark-app.store/store/application/quardcrt)
 - Deepin Store
 
-将来、さらに多くのアプリストアが利用可能になります。
-
-もちろん、自分のプラットフォームに応じて対応するインストールパッケージをダウンロードすることもできます。
+ここに掲載されていないプラットフォームや配布元では、以下のリリースパッケージを利用してください。
 
 ## ダウンロード
 
 ### すべてのプラットフォーム
 
-最新バージョンのQuardCRTをダウンロードしたい場合は、以下のリンクにアクセスしてください。
+最新版のダウンロードには、次のリリースページを利用できます。
 
 - [GitHub Releases](https://github.com/QQxiaoming/quardCRT/releases)
 - [Gitee Releases](https://gitee.com/QQxiaoming/quardCRT/releases)
 - [SourceForge](https://sourceforge.net/projects/quardcrt/files/)
 
-プラットフォームに応じて対応するパッケージをダウンロードする必要があります。以下のパッケージを提供しています。
+リリースアセットでは次の形式を提供しています。
 
-- Windows: 
+- Windows:
     - `quardCRT_windows_Vxxx_x86_64_setup.exe`
     - `quardCRT_windows_Vxxx_x86_64_msvc_setup.exe`
-- MacOS: 
+- macOS:
     - `quardCRT_macos_Vxxx_x86_64.dmg`
     - `quardCRT_macos_Vxxx_arm64.dmg`
-- Linux: 
+- Linux:
     - `quardCRT_Linux_Vxxx_x86_64.AppImage`
     - `quardCRT_Linux_Vxxx_x86_64.deb`
-- ソースコード: 
+- ソースコード:
     - `quardCRT_Vxxx_source.tar.gz`
     - `quardCRT_Vxxx_source.zip`
 
 ### Windows
 
-Windows を使用している場合は、`quardCRT_windows_Vxxx_x86_64_setup.exe` または `quardCRT_windows_Vxxx_x86_64_msvc_setup.exe` パッケージをダウンロードすることができます。`quardCRT_windows_Vxxx_x86_64_setup.exe` パッケージは MinGW でビルドされており、`quardCRT_windows_Vxxx_x86_64_msvc_setup.exe` パッケージは MSVC でビルドされています。必要に応じてパッケージを選択することができます。カスタムプラグインについて気にしない場合は、互換性が高い `quardCRT_windows_Vxxx_x86_64_setup.exe` パッケージを選択することができます。
+Windows では `quardCRT_windows_Vxxx_x86_64_setup.exe` または `quardCRT_windows_Vxxx_x86_64_msvc_setup.exe` を選びます。
 
-#### インストール 
-
-QuardCRT をインストールするには、パッケージをダブルクリックし、プロンプトに従ってインストールを完了します。
-
-1. 言語を選択し、「OK」をクリックします。
-2. 「次へ」をクリックします。
-3. インストールディレクトリを選択し、「次へ」をクリックします。
-4. デスクトップショートカットを作成するかどうかを選択し、「次へ」をクリックします。
-5. 「インストール」をクリックします。
-6. 「完了」をクリックします。
-
-### MacOS
-
-MacOSを使用している場合は、`quardCRT_macos_Vxxx_x86_64.dmg` または `quardCRT_macos_Vxxx_arm64.dmg` パッケージをダウンロードすることができます。`quardCRT_macos_Vxxx_x86_64.dmg` パッケージは x86_64 でビルドされており、`quardCRT_macos_Vxxx_arm64.dmg` パッケージは arm64 でビルドされています。Apple Silicon Mac を使用している場合は、`quardCRT_macos_Vxxx_arm64.dmg` パッケージを選択する必要があります。
+- `setup.exe`: MinGW ビルド。通常利用向けで互換性が高い構成です。
+- `msvc_setup.exe`: MSVC ビルド。MSVC でビルドしたプラグインやネイティブコンポーネントとのランタイム整合性が必要な場合に向いています。
 
 #### インストール
 
-QuardCRT をインストールするには、パッケージをダブルクリックし、プロンプトに従ってインストールを完了します。
+インストーラを起動し、セットアップウィザードに従って進めます。
+
+1. 言語を選択して `OK` をクリックします。
+
+![Windowsインストール例](./img/installation_4.png)
+
+2. `次へ` をクリックします。
+
+![Windowsインストール例](./img/installation_5.png)
+
+3. インストール先を選択して `次へ` をクリックします。
+
+![Windowsインストール例](./img/installation_6.png)
+
+4. デスクトップショートカットを作成するか選び、`次へ` をクリックします。
+
+![Windowsインストール例](./img/installation_7.png)
+
+5. `インストール` をクリックします。
+
+![Windowsインストール例](./img/installation_8.png)
+
+6. `完了` をクリックします。
+
+![Windowsインストール例](./img/installation_9.png)
+
+インストール後は、スタートメニューまたは作成したデスクトップショートカットから quardCRT を起動できます。
+
+### macOS
+
+Intel Mac では `quardCRT_macos_Vxxx_x86_64.dmg`、Apple Silicon Mac では `quardCRT_macos_Vxxx_arm64.dmg` を選んでください。
+
+#### インストール
+
+DMG を開き、通常の macOS アプリと同じ手順でインストールします。
 
 1. `quardCRT` アイコンをダブルクリックします。
-2. `quardCRT` アイコンを `Applications` フォルダにドラッグします。
+2. `quardCRT` アイコンを `Applications` フォルダへドラッグします。
 
-> 注記: 現在リリースしているプリビルドバイナリパッケージは、Apple によって公式に署名されていないため、初めてプログラムを開くと、プログラムが未確認の開発者から来ているという警告メッセージが表示されることがあります。プログラムを信頼している場合は、ターミナルを開いて `xattr -cr /Applications/quardCRT.app` を実行して、quardCRT.app の quarantine 属性を削除する必要があります。しかし、プログラムを信頼していない場合は、実行しないでください。自分でプログラムをソースコンパイルすることもできます。
+![macOSインストール例](./img/installation_3.png)
+
+> 注: 現在配布している macOS 向けプリビルドパッケージは Apple 署名されていません。初回起動時に未確認の開発元として警告される場合があります。配布物を信頼できる場合は、`xattr -cr /Applications/quardCRT.app` を実行して quarantine 属性を削除できます。信頼できない場合は警告を回避せず、代わりにソースからビルドしてください。
 
 ### Linux
 
-Linux を使用している場合は、`quardCRT_Linux_Vxxx_x86_64.AppImage` または `quardCRT_Linux_Vxxx_x86_64.deb` パッケージをダウンロードすることができます。`quardCRT_Linux_Vxxx_x86_64.AppImage` パッケージは AppImage パッケージであり、`quardCRT_Linux_Vxxx_x86_64.deb` パッケージは deb パッケージです。必要に応じてパッケージを選択することができます。
+Linux では次のいずれかを選べます。
 
-#### Install
+- `quardCRT_Linux_Vxxx_x86_64.AppImage`: 単一実行ファイルとして持ち運べるポータブル形式
+- `quardCRT_Linux_Vxxx_x86_64.deb`: Debian、Ubuntu、Deepin など Debian 系ディストリビューション向け
+
+#### インストール
 
 - AppImage
 
-AppImage パッケージはポータブルパッケージであり、インストールせずに直接実行することができます。実行可能にするには、次のコマンドを実行することができます。
+AppImage はインストール不要です。実行権限を付与してそのまま起動できます。
 
 ```bash
 chmod +x quardCRT_Linux_Vxxx_x86_64.AppImage
+./quardCRT_Linux_Vxxx_x86_64.AppImage
 ```
 
 - deb
 
-deb パッケージをダブルクリックし、プロンプトに従ってインストールを完了します。
+Debian パッケージは GUI パッケージマネージャでもコマンドラインでも導入できます。
+
+GUI でインストールする場合:
 
 1. パッケージをダブルクリックします。
 2. `インストール` をクリックします。
-3. パスワードを入力し、`認証` をクリックします。
+
+![deb パッケージインストール例 1](./img/installation_1.png)
+
+3. パスワードを入力して `認証` をクリックします。
 4. `閉じる` をクリックします。
 
-または、次のコマンドを実行して deb パッケージをインストールすることができます。
+![deb パッケージインストール例 2](./img/installation_2.png)
+
+コマンドラインでインストールする場合:
 
 ```bash
 sudo dpkg -i quardCRT_Linux_Vxxx_x86_64.deb
 ```
+
+依存関係の不足が報告される場合は、パッケージマネージャ経由で解決できます。たとえば:
+
+```bash
+sudo apt install ./quardCRT_Linux_Vxxx_x86_64.deb
+```
+
+## 初回起動
+
+インストール後の基本手順は次のとおりです。
+
+1. quardCRT を起動します。
+2. パッケージ側で言語選択が促された場合は、利用したい言語を選びます。
+3. セッションマネージャまたはクイック接続から接続を作成します。
+4. テーマ、フォント、転送先、詳細設定を変えたい場合は `オプション > グローバルオプション` を開きます。
+
+続きは [使い方ガイド](./usage.md) を参照してください。

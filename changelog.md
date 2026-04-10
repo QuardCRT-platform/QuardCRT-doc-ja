@@ -4,6 +4,8 @@
 
 ## [[リリース予定](https://github.com/QQxiaoming/quardCRT)]
 
+## [[V0.6.0](https://github.com/QQxiaoming/quardCRT/releases/tag/V0.6.0)] - 2026-04-10
+
 - メインウィンドウエラーを修正
 - ログにカスタムデータを追加する機能を追加
 - ログファイルパス設定オプションを改善
@@ -11,6 +13,12 @@
 - ターミナル録画ビデオ機能を追加
 - Raw プロトコルに TCP クライアント、TCP サーバー、UDP 送信、UDP 受信の 4 つのモードを追加
 - quardCRT 自己デバッグ用のログウィンドウを表示する機能を追加
+- TFTP プロトコルのロジックを改善
+- Emoji 内の旗記号の表示に対応
+- ターミナル内容のマッチング機能を改善
+- Linux で特定の文字列条件下においてターミナルがフリーズする問題を修正
+- Linux でシリアルドライバが Break をサポートしない場合にシリアルポートを開けない問題を修正
+- フローティングウィンドウを閉じた後に一部のリソースが正しく解放されない問題を修正 [#50](https://github.com/QQxiaoming/quardCRT/issues/50)
 
 ## [[V0.5.1](https://github.com/QQxiaoming/quardCRT/releases/tag/V0.5.1)] - 2024-09-26
 
